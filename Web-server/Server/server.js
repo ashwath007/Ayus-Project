@@ -28,9 +28,11 @@ app.use(cors());
 
 
 const userRoute = require("./routes/user");
+const adminRoute = require("./routes/admin"); // TODO SAM  use this da
 
+app.use("/user", userRoute);
+app.use("/admin",adminRoute);
 
-app.use("/api", userRoute);
 
 app.listen(port, () => {
     console.log(chalk.green(`Server started at ${port}`));
